@@ -117,7 +117,7 @@ class ECKey
     public static function createECKey(string $curve, array $values = []): JWK
     {
         $jwk = self::createECKeyUsingOpenSSL($curve);
-        $values = array_merge($values, $jwk);
+        $values = array_merge($jwk, $values);
 
         return new JWK($values);
     }
